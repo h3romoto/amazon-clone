@@ -17,22 +17,27 @@
   width: 100%;
   object-fit: contain;
   margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .product__info {
   height: 100px;
   margin-bottom: 15px;
-  width: 90%;
+  width: 95%;
 }
 
 .product__price {
   margin-top: 5px;
 }
 
-.product > button {
+.addTo__bucket {
   background: #f0c14b;
   border: 1px solid;
   margin-top: 10px;
   border-color: #a88734 #9c7e31 #846a29;
   color: #111;
+}
+
+.addTo__bucket:hover {
+  cursor: pointer;
 }

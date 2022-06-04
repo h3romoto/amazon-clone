@@ -16,7 +16,7 @@ function Product() {
       </div>
       <img src='https://images-na.ssl-images-amazon.com/images/I/51T-sMqSMiL._SX329_BO1,204,203,200_.jpg' alt='' />
 
-      <button>
+      <button className='addTo__bucket'>
         Add to bucket
       </button>
     </div>
