@@ -11,10 +11,7 @@ function Product() {
           <strong>19.99</strong>
         </p>
         <div className='product__rating'> 
-          <p> &#9733;</p>
-          <p> &#9733;</p>
-          <p> &#9733;</p>
-          <p> &#9733;</p>
+          <p> &#9733; &#9733; &#9733; &#9733;</p>
         </div>
       </div>
       <img src='https://images-na.ssl-images-amazon.com/images/I/51T-sMqSMiL._SX329_BO1,204,203,200_.jpg' alt='' />
