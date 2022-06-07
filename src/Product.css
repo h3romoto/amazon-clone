@@ -32,6 +32,7 @@
 
 .product__rating {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .addTo__bucket {
