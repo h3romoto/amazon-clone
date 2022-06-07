@@ -30,6 +30,10 @@
   margin-top: 5px;
 }
 
+.product__rating {
+  display: flex;
+}
+
 .addTo__bucket {
   background: #f0c14b;
   border: 1px solid;
