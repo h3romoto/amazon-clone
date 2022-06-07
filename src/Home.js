@@ -11,7 +11,11 @@ function Home() {
         />
 
         <div className='home__row'>
-          <Product />
+          <Product title='The lean startup'
+            price={18.99}
+            image='https://m.media-amazon.com/images/I/A1o-1kou5CL._SX3000_.jpg' 
+            rating={5}
+            />
           <Product />
           <Product />
         </div>
