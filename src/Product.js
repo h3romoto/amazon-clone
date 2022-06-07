@@ -2,7 +2,7 @@ import React from 'react'
 import './Product.css'
 
 //use props for different products
-function Product({ title, image, price, rating}) {
+function Product({ title, id, image, price, rating}) {
   return (
     <div className='product'>
       <div className='product__info'>
@@ -19,7 +19,7 @@ function Product({ title, image, price, rating}) {
           ))}
         </div>
       </div>
-      <img src='https://images-na.ssl-images-amazon.com/images/I/51T-sMqSMiL._SX329_BO1,204,203,200_.jpg' alt='' />
+      <img src={image} alt='' />
 
       <button className='addTo__bucket'>
         Add to bucket
