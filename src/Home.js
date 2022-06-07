@@ -20,10 +20,10 @@ function Home() {
             />
           <Product 
             id="4903851"
-            title="SANSUI ES40V1FA, 40 inch 1080p FHD Smart LED Android TV with Google Assistant(Voice Control), Screen Share, HDMI, USB(2022 Model-Android 11 OS)"
-            price={233.99}
-            image="https://m.media-amazon.com/images/I/71aiOe2eN8L._AC_UY436_FMwebp_QL65_.jpg"
-            rating={4}
+            title="2021 Apple 12.9-inch iPad Pro (Wi‑Fi, 128GB) - Space Gray"
+            price={999}
+            image="https://m.media-amazon.com/images/I/81+N4PFF7jS._AC_SX679_.jpg"
+            rating={5}
           />
           <Product 
             id="4903852"
