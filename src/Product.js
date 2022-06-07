@@ -1,7 +1,8 @@
 import React from 'react'
 import './Product.css'
 
-function Product() {
+//use props for different products
+function Product({ title, image, price, rating}) {
   return (
     <div className='product'>
       <div className='product__info'>
