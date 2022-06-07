@@ -35,27 +35,27 @@ function Home() {
         </div>
 
         <div className='home__row'>
-        {/* <Product 
+        <Product 
             id='4903853'
             title='Echo Dot (4th gen) with clock | Smart bedside speaker with Bluetooth and Alexa | Glacier White'
             price={49.99}
             image='https://m.media-amazon.com/images/I/51MzOVciT3L._AC_UY436_FMwebp_QL65_.jpg'
             rating={5}
-          /> */}
-          {/* <Product 
+          />
+          <Product 
             id='4903854'
             title='Funko POP! Marvel: Black Panther Movie - Black Panther (Styles May Vary) Collectible Figure Grey, 2.5 x 2.5 Inch'
             price={13.00}
             image='https://m.media-amazon.com/images/I/51kOiW9P1-L._AC_SY879_.jpg'
             rating={5}
-          /> */}
-          {/* <Product 
+          />
+          <Product 
             id='4903855'
-            title=''
-            price={}
-            image=''
-            rating={}
-          /> */}
+            title='UBeesize 60" Extendable Tripod Stand with Bluetooth Remote for iPhone Android Phone, Heavy Duty Aluminum, Lightweight, Load Capacity: 1 KgUBeesize 60" Extendable Tripod Stand with Bluetooth Remote for iPhone Android Phone, Heavy Duty Aluminum, Lightweight, Load Capacity: 1 Kg'
+            price={25.99}
+            image='https://m.media-amazon.com/images/I/61xAjSS+7SL._AC_SY240_.jpg'
+            rating={4}
+          />
         </div>
 
         <div className='home__row'>
