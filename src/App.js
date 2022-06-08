@@ -9,7 +9,9 @@ function App() {
     <Router>
       <div className="app">
         <Routes>
+          {/* use HTML fragment for rendering multiple components via the same route */}
           <Route path="/" element={<><Header /><Home /></>} />
+          <Route path="/checkout" element={<><Header /></>} />
         </Routes>
       </div>
     </Router>
