@@ -9,11 +9,13 @@ function App() {
     // BEM convention
     <Router>
       <div className="app">
+        {/* render the Header always */}
+        <Header />
         <Routes>
           {/* use HTML fragment for rendering multiple components via the same route */}
-          <Route path="/checkout" element={<><Header /><Checkout /></>} />
+          <Route path="/checkout" element={<><Checkout /></>} />
           {/* make sure the home component is at the bottom */}
-          <Route path="/" element={<><Header /><Home /></>} />
+          <Route path="/" element={<><Home /></>} />
         </Routes>
       </div>
     </Router>
