@@ -10,18 +10,16 @@ function Subtotal() {
           // use HTML fragment for rendering multiple components via the same route
           <>
             <p>
-              Subtotal ({basket.length} items):
-              <strong>{` ${value}`}</strong>
+              Subtotal (0 items): <strong>0</strong>
             </p>
             <small className='subtotal__gift'>
-              <input type="checkbox">
+              <input type="checkbox" />
                 This order contains a gift.
-              </input>
             </small>
           </>
         )}
         decimalScale={2}
-        value={getBasketTotal(basket)}
+        value={0}
         displayType={"text"}
         thousandSeparator={true}
         prefix={"$"}
@@ -30,4 +28,4 @@ function Subtotal() {
   );
 }
 
-export default Subtotal
+export default Subtotal;
