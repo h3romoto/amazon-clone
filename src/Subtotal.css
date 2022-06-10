@@ -15,4 +15,21 @@
 
 .subtotal__gift {
   font-size: small;
+  display: flex;
+  align-items: center;
+}
+
+.subtotal__gift > input {
+  margin-right: 5px;
+}
+
+.subtotal__container > button {
+  background: #f0c14b;
+  border-radius: 2px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid;
+  margin-top: 1px;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111
 }
