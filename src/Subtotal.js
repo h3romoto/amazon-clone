@@ -9,7 +9,7 @@ function Subtotal() {
         renderText={(value) => (
           // use HTML fragment for rendering multiple components via the same route
           <>
-            <p>
+            <p className='subtotal_items'>
               Subtotal (0 items): <strong>0</strong>
             </p>
             <small className='subtotal__gift'>
