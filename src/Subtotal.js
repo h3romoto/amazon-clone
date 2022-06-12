@@ -7,7 +7,7 @@ function Subtotal() {
     <div className='subtotal__container'>
       <CurrencyFormat
         renderText={(value) => (
-          // use HTML fragment for rendering multiple components via the same route
+          // <></> is a fragment for rendering multiple components via same route
           <>
             <p className='subtotal_items'>
               Subtotal (0 items): <strong>0</strong>
@@ -26,7 +26,7 @@ function Subtotal() {
       />
 
       <button className='proceedTo__checkout'>
-        Proceed to Checkout
+        Proceed to checkout 
       </button>
     </div>
   );
