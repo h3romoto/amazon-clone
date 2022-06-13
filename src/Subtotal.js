@@ -5,6 +5,26 @@ import { useStateValue } from './StateProvider'
 
 function Subtotal() {
   const [{ basket }, dispatch] = useStateValue();
+
+  const basketTotalValue = (basket) => {
+    var basketTotal = 0; 
+
+    basket.forEach(basket => {
+        for (let key in basket) {
+          if (key === "price"){
+            basketTotal += parseInt(`${basket[key]}`);
+            console.log(`${basket[key]}`);
+          }
+        }
+    });
+    
+    console.log("Basket total: ", basketTotal)
+
+    dispatch ({
+      basketTotal: basketTotal,
+    })
+  }
+
   return (
     <div className='subtotal__container'>
       <CurrencyFormat
@@ -12,7 +32,7 @@ function Subtotal() {
           // <></> is a fragment for rendering multiple components via same route
           <>
             <p className='subtotal_items'>
-              Subtotal ({basket.length} items): <strong>0</strong>
+              Subtotal ({basket.length} items): <strong>{basketTotalValue}</strong>
             </p>
             <small className='subtotal__gift'>
               <input type="checkbox" />
