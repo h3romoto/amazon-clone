@@ -36,7 +36,10 @@
 
 .login__container > form > input {
   height: 30px;
+  border: 1px solid;
+  border-radius: 2px;
   margin-bottom: 10px;
+  border-color: darkgray;
   background-color: white;
   width: 98%;
 }
