@@ -1,11 +1,12 @@
 import './Login.css'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import { auth, createUserWithEmailAndPassword } from './firebase-conf'
+import { auth, createUserWithEmailAndPassword } from './firebaseconf'
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
   const signIn = e => {
     // prevent app from refreshing
     e.preventDefault()
