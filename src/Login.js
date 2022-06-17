@@ -1,9 +1,10 @@
 import './Login.css'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth, createUserWithEmailAndPassword } from './firebaseconf'
 
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -19,6 +20,9 @@ const register = e => {
   createUserWithEmailAndPassword(auth, email, password)
   .then((auth) => {
     console.log(auth);
+    if (auth) {
+      navigate('/')
+    }
   })
   .catch(error => alert(error.message))
 }
