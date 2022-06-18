@@ -7,6 +7,7 @@
 
 ### Components
 - Clean up component image and ratings placement
+- Implement react-flip-move (Github: joshwcomeau/react-flip-move)
 
 ### Other
 - "Warning: Each child in a list should have a unique "key" prop. Check the render method of `Product`."
