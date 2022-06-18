@@ -37,7 +37,7 @@ function Header() {
             className='header__optionLineOne'>
             Hello Guest
           </span>
-          <Link to="/login" className="signIn__link">
+          <Link to={!user && "/login"} className="signIn__link">
             <span 
               className='header__optionLineTwo'>
               {user ? 'Sign Out': 'Sign In'}
