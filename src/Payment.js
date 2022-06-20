@@ -38,10 +38,17 @@ function Payment() {
             </div>
           </div>
         </div>
-        <div className='payment__section'>
-
-        </div>
+        
         {/* Payment method */}
+        <div className='payment__section'>
+          <div className='payment_title'>
+            <h3>Payment method</h3>
+          </div>
+          <div className='payment__details'>
+            {/* Stripe will go here */}
+          </div>
+        </div>
+
       </div>
     </div>
   )
