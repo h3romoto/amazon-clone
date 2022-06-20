@@ -4,6 +4,7 @@ import Home from './Home';
 import Login from './Login'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Checkout from './Checkout'
+import Payment from './Payment'
 import { useEffect } from 'react';
 import { auth } from './firebaseconf'
 import { useStateValue } from './StateProvider';
@@ -39,7 +40,7 @@ function App() {
           {/* use HTML fragment for rendering multiple components via the same route */}
           <Route path="/login" element={<><Login /></>} />
           <Route path="/checkout" element={<><Header /><Checkout /></>} />
-          <Route path="/payment" element={<><h3>This is the payment page</h3></>} />
+          <Route path="/payment" element={<><Header /><Payment /></>} />
           {/* make sure the home component is at the bottom */}
           <Route path="/" element={<><Header /><Home /></>} />
         </Routes>
