@@ -1,8 +1,8 @@
 import './Login.css'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { auth, createUserWithEmailAndPassword } from './firebaseconf'
-
+import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './firebaseconf'
+ 
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -11,6 +11,15 @@ function Login() {
   const signIn = e => {
     // prevent app from refreshing
     e.preventDefault()
+
+    signInWithEmailAndPassword(auth, email, password)
+    .then((auth) => {
+      console.log(auth);
+      if (auth) {
+        navigate('/')
+      }
+    })
+    .catch(error => alert(error.message))
   } 
 
 const register = e => {
