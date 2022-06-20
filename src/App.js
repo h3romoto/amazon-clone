@@ -8,6 +8,12 @@ import Payment from './Payment'
 import { useEffect } from 'react';
 import { auth } from './firebaseconf'
 import { useStateValue } from './StateProvider';
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+const promise = loadStripe(
+  'pk_test_51LCiWcFdRVVKiVDJeisyPrCYRvsYuBqqiJIKM4ovd4mMZODp9yXLU9Rq6QBy2CwYvu888mebMe01xTda9TWSB8QI00TcxW6CWA'
+   );
 
 function App() {
   const [ {}, dispatch] = useStateValue();
@@ -38,11 +44,44 @@ function App() {
         {/* render the Header always */}
         <Routes>
           {/* use HTML fragment for rendering multiple components via the same route */}
-          <Route path="/login" element={<><Login /></>} />
-          <Route path="/checkout" element={<><Header /><Checkout /></>} />
-          <Route path="/payment" element={<><Header /><Payment /></>} />
+          <Route 
+            path="/login" 
+            element={
+              <>
+                <Login />
+              </>
+            } 
+          />
+          <Route 
+            path="/checkout" 
+            element={
+              <>
+                <Header />
+                <Checkout />
+              </>
+            } 
+          />
+          <Route 
+            path="/payment" 
+            element={
+              <>
+                <Header />
+                <Elements stripe={promise}>
+                  <Payment />
+                </Elements>
+              </>
+            } 
+          />
           {/* make sure the home component is at the bottom */}
-          <Route path="/" element={<><Header /><Home /></>} />
+          <Route 
+            path="/" 
+            element={
+              <>
+                <Header />
+                <Home />
+              </>
+            } 
+          />
         </Routes>
       </div>
     </Router>
