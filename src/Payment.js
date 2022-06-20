@@ -2,11 +2,22 @@ import React from 'react'
 import './Payment.css'
 import { useStateValue } from './StateProvider';
 import CheckoutProduct from './CheckoutProduct'
+import { Link } from 'react-router-dom';
+
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
+
   return (
     <div className='payment'>
       <div className='paymnent_container'>
+        <h1>
+          Checkout (
+            <Link to='/checkout'>
+              {basket?.length} items
+            </Link>
+          )
+        </h1>
+
         {/* Delivery address */}
         <div className='payment__section'>
           <div className='payment__title'>
