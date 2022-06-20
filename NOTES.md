@@ -6,6 +6,7 @@
 - user.email is returning null on Checkout and Header components
 
 ### Components
+- The home route '/' is not acting as the default as it should. If you use a random route e.g '/random' browser shows a blank page instead of the home component by default
 - Clean up component image and ratings placement
 - Implement animations react-flip-move (Github: joshwcomeau/react-flip-move)
 - Add content to the Checkout Amazon card banner
