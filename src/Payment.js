@@ -60,9 +60,9 @@ function Payment() {
           </div>
           <div className='payment__details'>
             {/* Stripe will go here */}
-                <form>
-                  <CardElement />
-                </form>
+              <form>
+                <CardElement />
+              </form>
           </div>
         </div>
 
