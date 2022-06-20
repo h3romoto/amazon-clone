@@ -13,9 +13,9 @@ function App() {
 
   // Listener
   useEffect(() => {
-    //Runs only once when the app component loads
+    // Runs only once when the app component loads
     auth.onAuthStateChanged(authUser => {
-      console.log("USER: ", authUser)
+      console.log("THE USER IS >>> ", authUser)
 
       if (authUser) {
         dispatch({
@@ -39,6 +39,7 @@ function App() {
           {/* use HTML fragment for rendering multiple components via the same route */}
           <Route path="/login" element={<><Login /></>} />
           <Route path="/checkout" element={<><Header /><Checkout /></>} />
+          <Route path="/payment" element={<><h3>This is the payment page</h3></>} />
           {/* make sure the home component is at the bottom */}
           <Route path="/" element={<><Header /><Home /></>} />
         </Routes>
