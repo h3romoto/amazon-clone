@@ -9,7 +9,7 @@ function Payment() {
 
   return (
     <div className='payment'>
-      <div className='paymnent_container'>
+      <div className='payment__container'>
         <h1>
           Checkout (
             <Link to='/checkout'>
