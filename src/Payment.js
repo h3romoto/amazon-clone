@@ -10,6 +10,14 @@ function Payment() {
   const stripe = useStripe();
   const elements = useElements();
 
+  const handleSubmit = e => {
+
+  }
+
+  const handleChange = e => {
+    
+  }
+
   return (
     <div className='payment'>
       <div className='payment__container'>
@@ -60,9 +68,21 @@ function Payment() {
           </div>
           <div className='payment__details'>
             {/* Stripe will go here */}
-              <form>
-                <CardElement />
+              <form onClick={handleSubmit}>
+                <CardElement onChange={handleChange}/>
               </form>
+              <div className='payment__priceContainer'>
+                <CurrencyFormat
+                  renderText={(value) => (
+                    <h3>Order total: </h3>
+                  )}
+                  decimalScale={2}
+                  value={getBasketTotal(basket)}
+                  displayType={"text"}
+                  thousandSeparator={true}
+                  prefix={"$"}
+                />
+              </div>
           </div>
         </div>
 
