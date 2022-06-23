@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Payment.css'
 import CurrencyFormat from 'react-currency-format'
 import { useStateValue } from './StateProvider'
@@ -7,10 +7,14 @@ import CheckoutProduct from './CheckoutProduct'
 import { Link } from 'react-router-dom';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 
+
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
   const stripe = useStripe();
   const elements = useElements();
+  const [succeeded, setSucceed] = useState(false);
+  const [processing, setProcessing] = useState("");
+  const [disabled, setDisabled] = useState(true);
 
   const handleSubmit = e => {
 
@@ -69,22 +73,27 @@ function Payment() {
             <h3>Payment method</h3>
           </div>
           <div className='payment__details'>
-            {/* Stripe will go here */}
-              <form onClick={handleSubmit}>
-                <CardElement onChange={handleChange}/>
+              {/* Stripe will go here */}
+              <form onSubmit={handleSubmit}>
+                  <CardElement onChange={handleChange}/>
+                  <div className='payment__priceContainer'>
+                    <CurrencyFormat
+                      renderText={(value) => (
+                        <h3>Order total: {value} </h3>
+                      )}
+                      decimalScale={2}
+                      value={getBasketTotal(basket)}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                      prefix={"$"}
+                    />
+                    <button disabled={processing || disabled || succeeded}>
+                      <span>
+                        { processing? <p>Processing</p> : "Buy Now"}
+                        </span>
+                    </button>
+                  </div>
               </form>
-              <div className='payment__priceContainer'>
-                <CurrencyFormat
-                  renderText={(value) => (
-                    <h3>Order total: {value} </h3>
-                  )}
-                  decimalScale={2}
-                  value={getBasketTotal(basket)}
-                  displayType={"text"}
-                  thousandSeparator={true}
-                  prefix={"$"}
-                />
-              </div>
           </div>
         </div>
 
