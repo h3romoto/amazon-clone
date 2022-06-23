@@ -14,5 +14,6 @@
 - Add content to the Checkout Amazon card banner
 - Add a footer to all the pages
 
-### Other
+### Console Warnings
 - "Warning: Each child in a list should have a unique "key" prop. Check the render method of `Product`."
+- Warning: validateDOMNesting(...): `<h4>` cannot appear as a child of `<h3>`
