@@ -32,7 +32,7 @@ app.post('/payments/create', async(request, response) => {
   })
 })
 
-// example api endpoint
+// example api endpoint from express server
 // http://localhost:5001/clone-e178e/us-central1/api
 // from firebase emulators:start and disabling AirPlay Receiver in System Preferences > Sharing
 
