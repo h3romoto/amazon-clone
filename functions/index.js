@@ -17,5 +17,9 @@ app.use(express.json());
 // API routes
 app.get('/', (request, response) => response.status(200).send('Hello World'))
 
+// example api endpoint
+// http://localhost:5001/clone-e178e/us-central1/api
+// from firebase emulators:start and disabling AirPlay Receiver in System Preferences > Sharing
+
 // Listen command
 exports.api = functions.https.onRequest(app)
