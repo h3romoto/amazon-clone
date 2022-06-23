@@ -1,20 +1,24 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './Payment.css'
 import CurrencyFormat from 'react-currency-format'
 import { useStateValue } from './StateProvider'
 import { getBasketTotal } from './reducer';
 import CheckoutProduct from './CheckoutProduct'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import axios from "./axios";
 
 
 function Payment() {
-  const [{ basket, user }, dispatch] = useStateValue();
   const stripe = useStripe();
+  const navigate = useNavigate();
   const elements = useElements();
+  const [disabled, setDisabled] = useState(true);
   const [succeeded, setSucceed] = useState(false);
   const [processing, setProcessing] = useState("");
-  const [disabled, setDisabled] = useState(true);
+  const [error, setError] = useState(null);
+  const [clientSecret, setClientSecret] = useState(true)
+  const [{ basket, user }, dispatch] = useStateValue();
 
   useEffect(() => {
     // gnerate the stripe secrete which allows us to charge the customer
@@ -37,6 +41,20 @@ function Payment() {
     setProcessing(true)
     
     // const payload = await stripe
+    const payload = await stripe.confirmCardPayment(clientSecret, {
+      // get card info
+      payment_method: {
+        card: elements.getElement(CardElement)
+      }
+    }).then(({ paymentIntent }) => {
+      // paymentIntent = payment confirmation
+      setSucceed(true);
+      setError(null);
+      setProcessing(false);
+
+      // supposed to be history.replace('/orders')? (but useHistory seems to be deprecated)
+      navigate('/orders')
+    })
   }
 
   const handleChange = event => {
