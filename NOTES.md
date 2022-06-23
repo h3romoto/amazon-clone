@@ -7,6 +7,7 @@
 
 ### Components
 - The home route '/' is not acting as the default as it should. If you use a random route e.g '/random' browser shows a blank page instead of the home component by default
+- Remove the comment on console, "This is the basket"
 - Fix items alignment on the Payment component, they are supposed to take .8 of the screen on the right side
 - Clean up component image and ratings placement
 - Implement animations react-flip-move (Github: joshwcomeau/react-flip-move)
