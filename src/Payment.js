@@ -11,8 +11,8 @@ import axios from "./axios";
 
 function Payment() {
   const stripe = useStripe();
-  const navigate = useNavigate();
   const elements = useElements();
+  const navigate = useNavigate();
   const [disabled, setDisabled] = useState(true);
   const [succeeded, setSucceed] = useState(false);
   const [processing, setProcessing] = useState("");
@@ -25,21 +25,21 @@ function Payment() {
     const getClientSecret = async () => {
       const response = await axios({
         method: 'post',
-        // Stripe expects the total in a currency's subcurrency
-        url: `/payments/create?total=${getBasketTotal(basket) * 100}`
+        url: `/payments/create?total=${getBasketTotal(basket) * 100}` 
+        // Stripe expects total in currency's subcurrency
       });
       setClientSecret(response.data.clientSecret)
 
     }
-
     getClientSecret();
   }, [basket])
 
   console.log('THE SECRET IS >>> ', clientSecret)
 
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setProcessing(true)
+    setProcessing(true);
     
     // const payload = await stripe
     const payload = await stripe.confirmCardPayment(clientSecret, {
@@ -57,6 +57,7 @@ function Payment() {
       navigate('/orders')
     })
   }
+
 
   const handleChange = event => {
     // listen for changes in the CardElement, display any errors as the customer types their card details
