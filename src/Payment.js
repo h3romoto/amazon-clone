@@ -53,6 +53,10 @@ function Payment() {
       setError(null);
       setProcessing(false);
 
+      dispatch({
+        type: 'EMPTY_BASKET'
+      })
+
       // supposed to be history.replace('/orders')? (but useHistory seems to be deprecated)
       navigate('/orders')
     })
