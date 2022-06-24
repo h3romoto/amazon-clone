@@ -7,6 +7,7 @@ import CheckoutProduct from './CheckoutProduct'
 import { Link, useNavigate } from 'react-router-dom';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import axios from "./axios";
+import { db } from './firebaseconf';
 
 
 function Payment() {
@@ -48,6 +49,18 @@ function Payment() {
         card: elements.getElement(CardElement)
       }
     }).then(({ paymentIntent }) => {
+      
+      // noSQL data structure
+      db.collection('users')
+      .doc(user?.uid)
+      .collection('orders')
+      .doc(paymentIntent.id)
+      .set({
+        basket: basket,
+        amount: paymentIntent.amount,
+        created: paymentIntent.created
+      })
+
       // paymentIntent = payment confirmation
       setSucceed(true);
       setError(null);
