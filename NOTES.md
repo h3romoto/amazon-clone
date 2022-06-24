@@ -17,3 +17,6 @@
 ### Console Warnings
 - "Warning: Each child in a list should have a unique "key" prop. Check the render method of `Product`."
 - Warning: validateDOMNesting(...): `<h4>` cannot appear as a child of `<h3>`
+
+### Stripe
+- After setting up Stripe and making a payment using card credentials 42424242424242 etc, the payment status under [https://dashboard.stripe.com/test/payments/](https://dashboard.stripe.com/test/payments/), payment status still says incomplete. [Docs for fixing the issue](https://stripe.com/docs/api/payment_intents/object#payment_intent_object-payment_method)
