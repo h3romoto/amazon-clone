@@ -44,9 +44,11 @@ function App() {
       <div className="app">
         <Routes>  
           {/* use HTML fragment for rendering multiple components via the same route */}
-          <Route path="/orders"
+          <Route 
+            path="/orders"
             element={
               <>
+                <Header />
                 <Orders />
               </>
             } 
